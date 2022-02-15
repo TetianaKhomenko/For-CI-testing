@@ -2,6 +2,20 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+parameters:
+  testomatio: 
+    type: string
+    default: ""
+
+  run: 
+    type: string
+    default: ""
+
+  testomatio_url: 
+    type: string
+    default: ""
+
+
 orbs:
   # The Node.js orb contains a set of prepackaged CircleCI configuration you can utilize
   # Orbs reduce the amount of configuration required for common tasks.
