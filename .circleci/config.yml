@@ -15,6 +15,11 @@ parameters:
     type: string
     default: ""
 
+  grep:
+    type: string
+    default: ""
+
+
 
 orbs:
   # The Node.js orb contains a set of prepackaged CircleCI configuration you can utilize
@@ -46,7 +51,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
-          command: npx codeceptjs run
+          command: npx codeceptjs run --grep "<< pipeline.parameters.grep >>"
           environment:
             TESTOMATIO: << pipeline.parameters.testomatio >>
             TESTOMATIO_RUN: << pipeline.parameters.run >>
